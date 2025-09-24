@@ -1,4 +1,4 @@
-package persistencia;
+package academia.persistencia;
 
 public class Persistencia {
     

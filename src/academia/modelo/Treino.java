@@ -1,4 +1,4 @@
-package modelo;
+package academia.modelo;
 
 public class Treino {
     
