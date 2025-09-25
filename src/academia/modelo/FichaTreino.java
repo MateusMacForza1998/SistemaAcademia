@@ -1,49 +1,41 @@
 package academia.modelo;
+import java.util.ArrayList;
+import java.util.List;
 
-public class FichaTreino {
 
-    protected String exercicio;
-    protected int serie;
-    protected int repeticao;
-    protected float intervalo;
+public class FichaTreino extends Entidade {
 
-    public FichaTreino(String exercicio, int serie, int repeticao, float intervalo){
-        this.exercicio = exercicio;
-        this.serie = serie;
-        this.repeticao = repeticao;
-        this.intervalo = intervalo;
+    public Aluno treinoAluno;
+    public Treinador treinoTreinador;
+    public List<Treino> FichaAluno;
+
+    public FichaTreino(int id, Aluno treinoAluno, Treinador treinoTreinador){
+        super(id);
+        this.treinoAluno = treinoAluno;
+        this.treinoTreinador = treinoTreinador;
+        this.FichaAluno = new ArrayList<>();
+    }
+    public Aluno GetTreinoAluno(){
+        return treinoAluno;
+    }
+    public void SetTreinoAluno(Aluno treinoAluno){
+        this.treinoAluno = treinoAluno;
+    }
+    public Treinador GetTreinoTreinador(){
+        return treinoTreinador;
+    }
+    public void SetTreinoTreinoTreinadorador(Treinador treinoTreinador){
+        this.treinoTreinador = treinoTreinador;
     }
 
-    public String GetExercicio(){
-        return exercicio;
+    public void adicionarTreino(Treino exercicio){
+        FichaAluno.add(exercicio);
     }
-    public void SetExercicio(String exercicio){
-        this.exercicio = exercicio;
+    public void  removeTreino(Treino exercicio){
+        FichaAluno.add(exercicio);
     }
-
-    public int GetSerie(){
-        return serie;
-    }
-    public void SetSerie(int serie){
-        this.serie = serie;
-    }
-
-    public int GetRepeticao(){
-        return repeticao;
-    }
-    public void SetRepeticao(int repeticao){
-        this.repeticao = repeticao;
-    }
-
-    public float GetIntervalo(){
-        return intervalo;
-    } 
-    public void SetIntervalo(float intervalo){
-        this.intervalo = intervalo;
-    }
-
     
 
 
     
-} 
+}
