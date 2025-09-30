@@ -42,7 +42,14 @@ public class Treino {
         this.intervalo = intervalo;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Exercício: " + exercicio +
+           " | Séries: " + serie +
+           " | Repetições: " + repeticao +
+           " | Intervalo: " + intervalo + " min";
+    }
+
 
 
     

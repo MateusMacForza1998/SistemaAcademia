@@ -2,16 +2,16 @@ package academia.modelo;
 
 public abstract class Entidade {
 
-    public int id;
+    private int id;
 
     public Entidade(int id){
         this.id = id;
 
     }
-    public int GetId(){
+    public int getId(){
         return id;
     }
-    public void SetId(int id){
+    public void setId(int id){
         this.id = id;
     }
     @Override
