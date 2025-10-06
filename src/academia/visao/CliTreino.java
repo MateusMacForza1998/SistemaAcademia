@@ -72,10 +72,7 @@ public class CliTreino {
                     break;
                 case 4:
                     System.out.println("=== Lista de Treinos ===");
-                    System.out.println(banco.getBancoAluno());
-                    System.out.println(banco.getBancoTreinador());
                     System.out.println(banco.getBancoTreino().toString());
-                    System.out.println("=== Lista de Ficha ===");
 
                     break;
                 case 5:
