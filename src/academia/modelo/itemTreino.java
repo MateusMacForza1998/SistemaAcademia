@@ -5,14 +5,12 @@ public class itemTreino extends Entidade{
     private String exercicio;
     private int serie;
     private int repeticao;
-    private float intervalo;
 
-    public itemTreino( int id,String exercicio, int serie, int repeticao, float intervalo){
+    public itemTreino( int id,String exercicio, int serie, int repeticao){
         super(id);
         this.exercicio = exercicio;
         this.serie = serie;
         this.repeticao = repeticao;
-        this.intervalo = intervalo;
     }
 
     public String getExercicio(){
@@ -36,20 +34,12 @@ public class itemTreino extends Entidade{
         this.repeticao = repeticao;
     }
 
-    public float getIntervalo(){
-        return intervalo;
-    } 
-    public void setIntervalo(float intervalo){
-        this.intervalo = intervalo;
-    }
-
     @Override
     public String toString() {
         return
         " | Exercício: " + exercicio +
         " | Séries: " + serie +
-        " | Repetições: " + repeticao +
-        " | Intervalo: " + intervalo + " min";
+        " | Repetições: " + repeticao;
     }
 
 

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import academia.persistencia.Banco;
 import academia.modelo.Treino;
 
-public class CliPrincipal {
+public class Programa {
 
 
     public static void main(String[] args) throws Exception {

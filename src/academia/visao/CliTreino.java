@@ -33,10 +33,7 @@ public class CliTreino {
                         System.out.println("Digite quantas repetições tem:");
                         int repeticao = menu.nextInt();
                         menu.nextLine();
-                        System.out.println("Digite o tempo de intervalos: (min)");
-                        float intervalo = menu.nextFloat();
-                        menu.nextLine();
-                        itemTreino treino = new itemTreino(id,exercicio, serie, repeticao, intervalo);
+                        itemTreino treino = new itemTreino(id,exercicio, serie, repeticao);
                         banco.getBancoTreino().insere(treino);
                         System.out.println("Treino inserido com sucesso!"); 
                     }
@@ -62,10 +59,7 @@ public class CliTreino {
                     System.out.println("Nova quantidade de repetições:");
                     int repeticaoNova = menu.nextInt();
                     menu.nextLine();
-                    System.out.println("Novo intervalo (min):");
-                    float intervaloNovo = menu.nextFloat();
-                    menu.nextLine();
-                    itemTreino treinoEditado = new itemTreino(idEditar,exercicioNovo, serieNova, repeticaoNova, intervaloNovo);
+                    itemTreino treinoEditado = new itemTreino(idEditar,exercicioNovo, serieNova, repeticaoNova);
                     banco.getBancoTreino().altera(treinoEditado);
                     System.out.println("Treino editado com sucesso!");
                     break;
@@ -78,6 +72,8 @@ public class CliTreino {
                     break;
                 case 4:
                     System.out.println("=== Lista de Treinos ===");
+                    System.out.println(banco.getBancoAluno());
+                    System.out.println(banco.getBancoTreinador());
                     System.out.println(banco.getBancoTreino().toString());
                     System.out.println("=== Lista de Ficha ===");
 
