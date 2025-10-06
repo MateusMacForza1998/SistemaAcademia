@@ -2,35 +2,26 @@ package academia.persistencia;
 
 public class Banco {
 
-    private Persistencia Aluno;
-    private Persistencia Treinador;
-    private Persistencia Treino;
+    private Persistencia aluno;
+    private Persistencia treinador;
+    private Persistencia treino;
 
-    public Banco(Persistencia Aluno, Persistencia Treinador, Persistencia Treino){
-        this.Aluno = Aluno;
-        this.Treinador = Treinador;
-        this.Treino = Treino;
+    public Banco(){
+        this.aluno = new Persistencia();
+        this.treinador = new Persistencia();
+        this.treino = new Persistencia();
     }
 
+    
     public Persistencia getBancoAluno(){
-        return this.Aluno;
-    }
-    public void setBancoAluno(Persistencia Aluno){
-        this.Aluno = Aluno;
+        return this.aluno;
     }
 
     public Persistencia getBancoTreinador(){
-        return this.Treinador;
+        return this.treinador;
     }
 
-    public void setBancoTreinador(Persistencia Treinador){
-        this.Treinador = Treinador;
-    }
     public Persistencia getBancoTreino(){
-        return this.Treino;
-    }
-
-    public void setBancoTreino(Persistencia Treino){
-        this.Treino = Treino;
+        return this.treino;
     }
 }

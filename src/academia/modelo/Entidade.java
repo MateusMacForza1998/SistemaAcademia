@@ -2,7 +2,7 @@ package academia.modelo;
 
 public abstract class Entidade {
 
-    private int id;
+    protected int id;
 
     public Entidade(int id){
         this.id = id;
@@ -16,7 +16,7 @@ public abstract class Entidade {
     }
     @Override
     public String toString() {
-        return "| ID: " + id;
+        return "ID=" + id;
     }
 
 }

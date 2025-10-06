@@ -1,56 +1,54 @@
 package academia.modelo;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Treino {
 
-    protected String exercicio;
-    protected int serie;
-    protected int repeticao;
-    protected float intervalo;
+public class Treino extends Entidade {
 
-    public Treino(String exercicio, int serie, int repeticao, float intervalo){
-        this.exercicio = exercicio;
-        this.serie = serie;
-        this.repeticao = repeticao;
-        this.intervalo = intervalo;
+    private Aluno treinoAluno;
+    private Treinador treinoTreinador;
+    private List<itemTreino> fichaAluno;
+
+    public Treino(int id, Aluno treinoAluno, Treinador treinoTreinador){
+        super(id);
+        this.treinoAluno = treinoAluno;
+        this.treinoTreinador = treinoTreinador;
+        this.fichaAluno = new ArrayList<>();
+    }
+    public Aluno getTreinoAluno(){
+        return treinoAluno;
+    }
+    public void setTreinoAluno(Aluno treinoAluno){
+        this.treinoAluno = treinoAluno;
+    }
+    public Treinador getTreinoTreinador(){
+        return treinoTreinador;
+    }
+    public void setTreinoTreinador(Treinador treinoTreinador){
+        this.treinoTreinador = treinoTreinador;
     }
 
-    public String GetExercicio(){
-        return exercicio;
+    public void adicionarTreino(itemTreino exercicio){
+        fichaAluno.add(exercicio);
     }
-    public void SetExercicio(String exercicio){
-        this.exercicio = exercicio;
+    public void  removeTreino(itemTreino exercicio){
+        fichaAluno.remove(exercicio);
     }
-
-    public int GetSerie(){
-        return serie;
-    }
-    public void SetSerie(int serie){
-        this.serie = serie;
-    }
-
-    public int GetRepeticao(){
-        return repeticao;
-    }
-    public void SetRepeticao(int repeticao){
-        this.repeticao = repeticao;
-    }
-
-    public float GetIntervalo(){
-        return intervalo;
-    } 
-    public void SetIntervalo(float intervalo){
-        this.intervalo = intervalo;
-    }
-
     @Override
     public String toString() {
-        return "Exercício: " + exercicio +
-           " | Séries: " + serie +
-           " | Repetições: " + repeticao +
-           " | Intervalo: " + intervalo + " min";
-    }
+        StringBuilder sb = new StringBuilder();
+        sb.append("FichaTreino ").append(super.toString())
+        .append(" | Aluno: ").append(treinoAluno.getNomeAluno())
+        .append(" | Treinador: ").append(treinoTreinador.getNomeTreinador())
+        .append("\nItens:\n");
 
+        for (itemTreino t : fichaAluno) {
+            sb.append(" - ").append(t.toString()).append("\n");
+        }
+
+        return sb.toString();
+}
 
 
     
-} 
+}
