@@ -6,8 +6,8 @@ import java.util.List;
 public class Treino extends Entidade {
 
     private Aluno treinoAluno;
-    private Treinador treinoTreinador;
-    private List<itemTreino> fichaAluno;
+    private Treinador treinoTreinador;  
+    private List<ItemTreino> fichaAluno;
 
     public Treino(int id, Aluno treinoAluno, Treinador treinoTreinador){
         super(id);
@@ -28,7 +28,7 @@ public class Treino extends Entidade {
         this.treinoTreinador = treinoTreinador;
     }
 
-    public void adicionarTreino(itemTreino exercicio){
+    /*public void adicionarTreino(itemTreino exercicio){
         fichaAluno.add(exercicio);
     }
     public void  removeTreino(itemTreino exercicio){

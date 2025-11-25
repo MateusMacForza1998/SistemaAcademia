@@ -1,14 +1,13 @@
 package academia.persistencia;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 import academia.modelo.Entidade;
 
 
-public class Persistencia{
-    private List<Entidade> iDentidades;
+public class Persistencia<T  extends Entidade>{
+    private List<T> iDentidades;
 
     public Persistencia(){
     this.iDentidades = new ArrayList<>();
@@ -16,15 +15,15 @@ public class Persistencia{
 }
 
     // Métodos
-
-    public void insere(Entidade e){
-        iDentidades.add(e);
+    
+    public void insere(T entidade){
+        iDentidades.add(entidade);
         return;
     }
-    public void altera(Entidade e){
+    public void altera(T Entidade){
         for(int i = 0; i < iDentidades.size(); i++){
-            if (iDentidades.get(i).getId() == e.getId()) {
-                iDentidades.set(i, e);
+            if (iDentidades.get(i).getId() == Entidade.getId()) {
+                iDentidades.set(i, Entidade);
                 return;
             }
         }
@@ -40,8 +39,8 @@ public class Persistencia{
 
 
     }
-    public Entidade buscarID(int id){
-        for (Entidade e : iDentidades) {
+    public T buscarID(int id){
+        for (T e : iDentidades) {
             if (e.getId() == id) {
                 return e;
             }

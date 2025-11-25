@@ -23,7 +23,7 @@ public class Aluno extends Entidade {
     }
     @Override
     public String toString() {
-    return "Aluno" + super.toString() +
+    return 
     " | ID: " + getId() +
     " | Nome: " + nome + 
     " | Idade: " + idade;

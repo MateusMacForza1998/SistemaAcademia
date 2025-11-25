@@ -33,7 +33,7 @@ public class Treinador extends Entidade{
 
     @Override
     public String toString(){
-        return "Treinador" + super.toString() +
+        return
         " | ID: " + getId() +
         " | Nome: " + nome + 
         " | Idade: " + idade+

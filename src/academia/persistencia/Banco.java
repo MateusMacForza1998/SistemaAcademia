@@ -1,27 +1,31 @@
 package academia.persistencia;
 
+import academia.modelo.Aluno;
+import academia.modelo.Treinador;
+import academia.modelo.Treino;
+
 public class Banco {
 
-    private Persistencia aluno;
-    private Persistencia treinador;
-    private Persistencia treino;
+    private Persistencia<Aluno> aluno;
+    private Persistencia<Treinador> treinador;
+    private Persistencia<Treino> treino;
 
     public Banco(){
-        this.aluno = new Persistencia();
-        this.treinador = new Persistencia();
-        this.treino = new Persistencia();
+        this.aluno = new Persistencia<>();
+        this.treinador = new Persistencia<>();
+        this.treino = new Persistencia<>();
     }
 
     
-    public Persistencia getBancoAluno(){
+    public Persistencia<Aluno> getBancoAluno(){
         return this.aluno;
     }
 
-    public Persistencia getBancoTreinador(){
+    public Persistencia<Treinador> getBancoTreinador(){
         return this.treinador;
     }
 
-    public Persistencia getBancoTreino(){
+    public Persistencia<Treino> getBancoTreino(){
         return this.treino;
     }
 }
