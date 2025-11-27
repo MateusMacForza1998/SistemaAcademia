@@ -9,25 +9,23 @@ public class Aluno extends Entidade {
         this.nome = nome;
         this.idade = idade;
     }
-    public String getNomeAluno(){
+    public String getNome(){
         return nome;
     }
-    public void setNomeAluno(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
-    public int getIdadeAluno(){
+    public int getIdade(){
         return idade;
     }
-    public void setIdadeAluno(int idade){
+    public void setIdade(int idade){
         this.idade = idade;
     }
     @Override
     public String toString() {
-    return 
-    " | ID: " + getId() +
-    " | Nome: " + nome + 
-    " | Idade: " + idade;
+        return getId() + " - " + getNome();
     }
+
 
     
 }

@@ -12,16 +12,16 @@ public class Treinador extends Entidade{
         this.idade = idade;
         this.CREF = CREF;
     }
-    public String getNomeTreinador(){
+    public String getNome(){
         return nome;
     }
-    public void setNomeTreinador(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
-    public int getIdadeTreinador(){
+    public int getIdade(){
         return idade;
     }
-    public void setIdadeTreinador(int idade){
+    public void setIdade(int idade){
         this.idade = idade;
     }
     public int getCREF(){
@@ -32,12 +32,9 @@ public class Treinador extends Entidade{
     }
 
     @Override
-    public String toString(){
-        return
-        " | ID: " + getId() +
-        " | Nome: " + nome + 
-        " | Idade: " + idade+
-        " | CREF: "+ CREF;
+    public String toString() {
+        return getId() + " - " + getNome();
     }
+
     
 }

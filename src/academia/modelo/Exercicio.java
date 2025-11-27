@@ -13,6 +13,10 @@ public class Exercicio extends Entidade {
     public void setNomeExercicio(String nomeTreino){
         this.nomeTreino = nomeTreino;
     }
+
+    @Override
+    public String toString() {
+        return getId() + " - " + getNomeExercicio();
+    }
+
 }
-
-
