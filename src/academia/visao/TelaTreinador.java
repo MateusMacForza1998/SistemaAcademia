@@ -34,7 +34,7 @@ public class TelaTreinador extends JPanel {
         campoIdade = new JTextField(5);
         painelForms.add(campoIdade);
 
-        painelForms.add(new JLabel("CRM:"));
+        painelForms.add(new JLabel("CREF:"));
         campoCREF = new JTextField(10);
         painelForms.add(campoCREF);
         
@@ -68,7 +68,7 @@ public class TelaTreinador extends JPanel {
         modeloTabela.addColumn("ID");
         modeloTabela.addColumn("NOME");
         modeloTabela.addColumn("IDADE");
-        modeloTabela.addColumn("CRM");
+        modeloTabela.addColumn("CREF");
 
         tabela = new JTable(modeloTabela);
 

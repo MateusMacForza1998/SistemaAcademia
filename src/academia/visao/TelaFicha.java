@@ -2,6 +2,10 @@ package academia.visao;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
+
+
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -18,17 +22,19 @@ public class TelaFicha extends JPanel {
     private JTextField campoID;
     private JComboBox<Aluno> campoAluno;
     private JComboBox<Treinador> campoTreinador;
+    private JanelaPrincipal janela;
+
 
     private DefaultTableModel modeloTabela;
     private JTable tabela;
 
     private JButton botaoInserir, botaoAlterar, botaoExcluir, botaoVerID, botaoVerTodos;
 
-    public TelaFicha() {
-
+    public TelaFicha(JanelaPrincipal janela) {
+        this.janela = janela;
         
         painelForms = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 5));
-        add(painelForms, BorderLayout.NORTH);
+        add(painelForms, BorderLayout.CENTER);
 
         painelForms.add(new JLabel("ID da Ficha:"));
         campoID = new JTextField(5);
@@ -50,19 +56,19 @@ public class TelaFicha extends JPanel {
         painelCRUD = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
         add(painelCRUD, BorderLayout.CENTER);
 
-        botaoInserir = new JButton("Inserir");
+        botaoInserir = new JButton("Inserir Ficha");
         painelCRUD.add(botaoInserir);
 
-        botaoAlterar = new JButton("Alterar");
+        botaoAlterar = new JButton("Alterar Ficha");
         painelCRUD.add(botaoAlterar);
 
-        botaoExcluir = new JButton("Excluir");
+        botaoExcluir = new JButton("Excluir Ficha");
         painelCRUD.add(botaoExcluir);
 
-        botaoVerID = new JButton("Buscar por ID");
+        botaoVerID = new JButton("Buscar por ID Ficha");
         painelCRUD.add(botaoVerID);
 
-        botaoVerTodos = new JButton("Ver Todos");
+        botaoVerTodos = new JButton("Ver Todos Ficha");
         painelCRUD.add(botaoVerTodos);
         
 
@@ -87,6 +93,30 @@ public class TelaFicha extends JPanel {
                 atualizarComboBoxes();
             }
         });
+        tabela.addMouseListener(new MouseAdapter() {
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        int row = tabela.getSelectedRow();
+        if (row >= 0) {
+            int idFicha = (int) modeloTabela.getValueAt(row, 0);
+
+            try {
+                Ficha selecionada = Programa.banco.getBancoFicha().buscar(idFicha);
+
+                // Envia a ficha para a TelaIntegracao
+                janela.getTelaIntegracao().receberFicha(selecionada);
+
+                // Troca de tela
+                janela.mudarParaPainel("integracao");
+
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao selecionar ficha: " + ex.getMessage());
+            }
+        }
+    }
+});
+
+        
 }
         
 

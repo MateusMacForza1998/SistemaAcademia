@@ -7,6 +7,7 @@ public class Ficha extends Entidade {
     private Aluno aluno;                
     private Treinador treinador;        
     private List<Exercicio> exercicios; 
+    
 
     public Ficha(int id, Aluno aluno, Treinador treinador) {
         super(id);
