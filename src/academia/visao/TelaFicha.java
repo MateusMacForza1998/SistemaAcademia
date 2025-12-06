@@ -199,7 +199,8 @@ public class TelaFicha extends JPanel {
                     ficha.getId(),
                     ficha.getTreinador().getNome(),
                     ficha.getAluno().getNome(),
-                    ficha.getExercicios().size()
+                    ficha.getItens().size()
+
                 });
 
             } catch (NumberFormatException ex) {
@@ -240,7 +241,8 @@ public class TelaFicha extends JPanel {
                 f.getId(),
                 f.getTreinador().getNome(),
                 f.getAluno().getNome(),
-                f.getExercicios().size()
+                f.getItens().size()
+
             });
         }
     }

@@ -1,41 +1,46 @@
 package academia.modelo;
 
-public class ItemTreino extends Entidade{
+public class ItemTreino extends Entidade {
 
     private Exercicio exercicio;
     private int serie;
     private int repeticao;
 
-    public ItemTreino( int id, Exercicio exercicio, int serie, int repeticao){
+    public ItemTreino(int id, Exercicio exercicio, int serie, int repeticao) {
         super(id);
         this.exercicio = exercicio;
         this.serie = serie;
         this.repeticao = repeticao;
     }
 
-    public int getSerie(){
+    public Exercicio getExercicio() {
+        return exercicio;
+    }
+
+    public void setExercicio(Exercicio exercicio) {
+        this.exercicio = exercicio;
+    }
+
+    public int getSerie() {
         return serie;
     }
-    public void setSerie(int serie){
+
+    public void setSerie(int serie) {
         this.serie = serie;
     }
 
-    public int getRepeticao(){
+    public int getRepeticao() {
         return repeticao;
     }
-    public void setRepeticao(int repeticao){
+
+    public void setRepeticao(int repeticao) {
         this.repeticao = repeticao;
     }
 
     @Override
     public String toString() {
-        return
-        " | Exercício: " + exercicio +
-        " | Séries: " + serie +
-        " | Repetições: " + repeticao;
+        return "Exercício: " + exercicio.getNomeExercicio() +
+               " | Séries: " + serie +
+               " | Repetições: " + repeticao;
     }
-
-
-
-    
-} 
+}
